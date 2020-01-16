@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulaire</title>
+	<script type="text/javascript">
+		class Person{
+	    	constructor(name, lastName, birthday, birthplace, phone, adress){
+		        this.name = name;
+		        this.lastName = lastName;
+		        this.birthday = birthday;
+		        this.birthplace = birthplace;
+		        this.phone = phone;
+		        this.adress = adress;
+		    }
+		}
+
+		function addRow(){
+		    let row = "<tr>";
+		    let person = new Person(
+		        document.getElementById("name").value,
+		        document.getElementById("lastName").value,
+		        document.getElementById("birthday").value,
+		        document.getElementById("birthplace").value,
+		        document.getElementById("phone").value,        
+		        document.getElementById("adress").value
+		    )
+		    row += "<td>"+person.name+"</td>";
+		    row += "<td>"+person.lastName+"</td>";
+		    row += "<td>"+person.birthday+"</td>";
+		    row += "<td>"+person.birthplace+"</td>";
+		    row += "<td>"+person.phone+"</td>";
+		    row += "<td>"+person.adress+"</td>";
+		    row += "</tr>";
+		    document.getElementById("tabl2").innerHTML += row;
+
+		    // Persons.push(person);
+		    // for(let i = 0; i < Persons.length; i++){
+		    //     console.log(Persons[i]);
+		    // }
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<form name="form_1"></form>
+			<table id="table">
+				<tr>
+					<td>
+						<label>nom :</label>
+					</td>
+					<td>
+						<input type="text" id="name" name="n_nom">
+					</td>
+					<td>
+						<label>prénom :</label>
+					</td>
+					<td>
+						<input type="text" id="lastName" name="n_prenom">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>date de naissance :</label>
+					</td>
+					<td>
+						<input type="text" id="birthday" name="n_date">
+					</td>
+					<td>
+						<label>lieu de naissance :</label>
+					</td>
+					<td>
+						<input type="text" id="birthplace" name="n_lieu">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>numéro de téléphone :</label>
+					</td>
+					<td>
+						<input type="text" id="phone" name="n_numero">
+					</td>
+					<td>
+						<label>addresse :</label>
+					</td>
+					<td>
+						<input type="text" id="adress" name="n_addresse">
+					</td>
+				</tr>
+				<!-- <input type="button" id="btn" value="ajouter" onclick="addRow()"> -->
+			</table>
+			<center>
+				<input type="button" id="btn" value="ajouter" onclick="addRow()">
+			</center>
+		</form>
+	</center>
+	<center>
+		<table id="tabl2">
+			<tr>
+				<td>nom</td>
+				<td>prénom</td>
+				<td>date de naissance</td>
+				<td>lieu de naissance</td>
+				<td>numéro de téléphone</td>
+				<td>addresse</td>
+
+			</tr>
+		</table>
+	</center>
+</body>
+</html>
